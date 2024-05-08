@@ -74,9 +74,9 @@ document.getElementById("getTokens").addEventListener("click", async () => {
 		const response = await fetch(
 			"https://push-notifications-server-ql8n.onrender.com/push-tokens"
 		);
-		console.log("response", response);
 		if (response.ok) {
-			alert(response);
+			const data = await response.json();
+			alert(JSON.stringify(data, null, 2));
 		} else {
 			alert("Fetch tokens failed!");
 		}
