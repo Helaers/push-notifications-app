@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Strobbo push notification</title>
+		<!-- Include Tailwind CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="loadingText" class="flex justify-center items-center h-screen w-screen">
+			<span class="flex text-center">The server is getting ready. <br> It's a bit of a diva...</span>
+		</div>
+		</div>
+		<div
+			id="formWrapper"
+			class="container mx-auto p-4"
+			style="max-width: 500px"
+		>
+			<h1 class="text-2xl font-bold mb-4">Strobbo notification</h1>
+			<form id="form" class="space-y-4">
+				<div>
+					<label for="title" class="block text-sm font-medium text-gray-700"
+						>Title</label
+					>
+					<input
+						type="text"
+						id="title"
+						name="title"
+						class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+						required
+					/>
+				</div>
+				<div>
+					<label for="body" class="block text-sm font-medium text-gray-700"
+						>Body</label
+					>
+					<textarea
+						id="body"
+						name="body"
+						rows="5"
+						class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+						required
+					></textarea>
+				</div>
+				<div class="text-right">
+					<button
+						id="sendNotification"
+						type="submit"
+						class="w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600"
+					>
+						Send
+					</button>
+				</div>
+			</form>
+
+			<div class="flex mt-4 border-t pt-4 space-x-4">
+				<button
+					id="getTokens"
+					class="flex-grow bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+				>
+					Fetch tokens
+				</button>
+				<button
+					id="clearTokens"
+					class="flex-grow bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600"
+				>
+					Clear tokens
+				</button>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
