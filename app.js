@@ -39,7 +39,7 @@ document.getElementById("form").addEventListener("submit", async (event) => {
 	// Send form
 	try {
 		const response = await fetch(
-			"https://push-notifications-server-ql8n.onrender.com/push-token",
+			"https://push-notifications-server-ql8n.onrender.com/send-notification",
 			{
 				method: "POST",
 				headers: {
@@ -49,10 +49,9 @@ document.getElementById("form").addEventListener("submit", async (event) => {
 			}
 		);
 		if (response.ok) {
-			alert("Form submitted successfully!");
-
 			// Clear the form
 			event.target.reset();
+			alert("Form submitted successfully!");
 		} else {
 			alert("Error submitting form!");
 		}
@@ -77,7 +76,7 @@ document.getElementById("getTokens").addEventListener("click", async () => {
 		);
 		console.log("response", response);
 		if (response.ok) {
-			alert(response.data);
+			alert(response);
 		} else {
 			alert("Fetch tokens failed!");
 		}
